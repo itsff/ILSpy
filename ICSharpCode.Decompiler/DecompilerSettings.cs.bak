@@ -26,22 +26,6 @@ namespace ICSharpCode.Decompiler
 	/// </summary>
 	public class DecompilerSettings : INotifyPropertyChanged
 	{
-		bool onlyPublicAndProtected = false;
-
-		public bool OnlyPublicAndProtected
-		{
-			get { return onlyPublicAndProtected; }
-			set
-			{
-				if (onlyPublicAndProtected != value)
-				{
-					onlyPublicAndProtected = value;
-					OnPropertyChanged("OnlyPublicAndProtected");
-				}
-			}
-		}
-
-
 		bool anonymousMethods = true;
 		
 		/// <summary>

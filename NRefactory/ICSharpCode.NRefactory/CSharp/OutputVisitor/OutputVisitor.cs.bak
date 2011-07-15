@@ -2034,7 +2034,6 @@ namespace ICSharpCode.NRefactory.CSharp
 			}
 			CloseBrace (policy.PropertyBraceStyle);
 			NewLine ();
-			NewLine();
 			return EndNode (indexerDeclaration);
 		}
 		
@@ -2054,7 +2053,6 @@ namespace ICSharpCode.NRefactory.CSharp
 				constraint.AcceptVisitor (this, data);
 			}
 			WriteMethodBody (methodDeclaration.Body);
-			NewLine();
 			return EndNode (methodDeclaration);
 		}
 		
@@ -2081,7 +2079,6 @@ namespace ICSharpCode.NRefactory.CSharp
 			Space (policy.SpaceBeforeMethodDeclarationParentheses);
 			WriteCommaSeparatedListInParenthesis (operatorDeclaration.Parameters, policy.SpaceWithinMethodDeclarationParentheses);
 			WriteMethodBody (operatorDeclaration.Body);
-			NewLine();
 			return EndNode (operatorDeclaration);
 		}
 		
@@ -2135,7 +2132,6 @@ namespace ICSharpCode.NRefactory.CSharp
 			}
 			CloseBrace (policy.PropertyBraceStyle);
 			NewLine ();
-			NewLine();
 			return EndNode (propertyDeclaration);
 		}
 

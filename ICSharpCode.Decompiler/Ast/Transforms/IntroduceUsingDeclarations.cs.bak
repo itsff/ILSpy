@@ -177,24 +177,24 @@ namespace ICSharpCode.Decompiler.Ast.Transforms
 					foreach (GenericParameter gp in typeDef.GenericParameters) {
 						currentMemberTypes.Add(gp.Name);
 					}
-					foreach (TypeDefinition t in typeDef.NestedTypes.OrderBy(x => x.Name))
-					{
+                    foreach (TypeDefinition t in typeDef.NestedTypes.OrderBy(x => x.Name))
+                    {
 						if (privateMembersVisible || IsVisible(t, internalMembersVisibleInModule))
 							currentMemberTypes.Add(t.Name.Substring(t.Name.LastIndexOf('+') + 1));
 					}
 					
-					foreach (MethodDefinition method in typeDef.Methods.OrderBy(x => x.Name))
-					{
+                    foreach (MethodDefinition method in typeDef.Methods.OrderBy(x => x.Name))
+                    {
 						if (privateMembersVisible || IsVisible(method, internalMembersVisibleInModule))
 							AddCurrentMember(method);
 					}
-					foreach (PropertyDefinition property in typeDef.Properties.OrderBy(x => x.Name))
-					{
+                    foreach (PropertyDefinition property in typeDef.Properties.OrderBy(x => x.Name))
+                    {
 						if (privateMembersVisible || IsVisible(property.GetMethod, internalMembersVisibleInModule) || IsVisible(property.SetMethod, internalMembersVisibleInModule))
 							AddCurrentMember(property);
 					}
-					foreach (EventDefinition ev in typeDef.Events.OrderBy(x => x.Name))
-					{
+                    foreach (EventDefinition ev in typeDef.Events.OrderBy(x => x.Name))
+                    {
 						if (privateMembersVisible || IsVisible(ev.AddMethod, internalMembersVisibleInModule) || IsVisible(ev.RemoveMethod, internalMembersVisibleInModule))
 							AddCurrentMember(ev);
 					}
